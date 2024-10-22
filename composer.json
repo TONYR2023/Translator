@@ -1,0 +1,17 @@
+{
+    "name": "anthonybourdeau/translator",
+    "description": "translator",
+    "autoload": {
+        "psr-4": {
+            "Anthonybourdeau\\Translator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "anthonybourdeau",
+            "email": "tonyr2004@neuf.fr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
