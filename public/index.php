@@ -1,8 +1,9 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+use App\Kernel;
 
-use Anthonybourdeau\Translator\Translator;
+require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
-$translator = new Translator();
-echo $translator->translate("Bonjour");
+return function (array $context) {
+    return new Kernel($context['APP_ENV'], (bool) $context['APP_DEBUG']);
+};
