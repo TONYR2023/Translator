@@ -25,4 +25,28 @@ return [
     '@hotwired/turbo' => [
         'version' => '7.3.0',
     ],
+    'intl-messageformat' => [
+        'version' => '10.7.7',
+    ],
+    'tslib' => [
+        'version' => '2.8.1',
+    ],
+    '@formatjs/fast-memoize' => [
+        'version' => '2.2.3',
+    ],
+    '@formatjs/icu-messageformat-parser' => [
+        'version' => '2.9.4',
+    ],
+    '@formatjs/icu-skeleton-parser' => [
+        'version' => '1.8.8',
+    ],
+    '@symfony/ux-translator' => [
+        'path' => './vendor/symfony/ux-translator/assets/dist/translator_controller.js',
+    ],
+    '@app/translations' => [
+        'path' => './var/translations/index.js',
+    ],
+    '@app/translations/configuration' => [
+        'path' => './var/translations/configuration.js',
+    ],
 ];

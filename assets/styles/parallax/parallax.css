@@ -1,0 +1,40 @@
+/* Style for parallax */
+.parallax {
+    /* Image de fond */
+background-image: url('../../images/image1.jpg');
+    background-attachment: fixed; /* Rend l'effet parallax */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Pas de répétition */
+    background-size: cover; /* Adapte l'image à l'écran */
+    
+    /* Dimensions */
+    height: 500px; /* Hauteur de la section */
+    width: 100%; /* Largeur complète */
+}
+
+
+/* Style for the text on this image */
+.content {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Empile les éléments verticalement */
+    height: 100%; /* Même hauteur que .parallax */
+    color: white; /* Contraste sur l'image de fond */
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Couche sombre pour améliorer la lisibilité */
+}
+
+.content h2 {
+    margin-bottom: 1rem; /* Ajoute un espacement entre le titre et le texte */
+}
+.content p {
+    margin-top: 0; /* Ajuste pour éviter les marges par défaut */
+}
+
+.container{
+    width: 100%;
+    height:300px;
+}
+

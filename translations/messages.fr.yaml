@@ -1,0 +1,5 @@
+navbar:
+    home: "accueil"
+    prestation: "prestation"
+    tourism: "tourisme"
+    informations : "informations"

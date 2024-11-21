@@ -1,17 +1,78 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="{{ app.request.locale }}"></html>
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html>
+<head>
+	<meta charset="UTF-8">
+	<title>
+		{% block title %}Welcome!
+		{% endblock %}
+	</title>
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
+
+
+	{% block stylesheets %}
+		{{ encore_entry_link_tags('app') }}
+	{% endblock %}
+
+	{% block javascripts %}
+		{{ encore_entry_script_tags('app') }}
+		{% block importmap %}
+			{{ importmap('app') }}
+		{% endblock %}
+	{% endblock %}
+</head>
+<body>
+	<div
+		id="app">
+		<!-- Navbar -->
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
+				<div class="container-fluid p-2">
+
+					<ul class="navbar-nav ms-auto d-flex flex-row">
+						<li class="nav-item">
+							<a href="{{ path('home', { '_locale': app.request.locale }) }}" class="btn btn-primary">
+								{{ 'navbar.home'| trans }}
+							</a>
+						</li>
+
+						<li>
+							<a href="{{ path('prestations', { '_locale': app.request.locale }) }}" class="btn btn-primary">
+								{{ 'navbar.prestation'| trans }}
+							</a>
+						</li>
+
+						<li>
+							<a href="{{ path('tourism', { '_locale': app.request.locale }) }}" class="btn btn-primary">
+								{{ 'navbar.tourism'| trans }}
+							</a>
+						</li>
+
+					</ul>
+
+					<!-- Lien pour changer de langue -->
+
+
+					<a href="{{ path('switch_language', { '_locale': app.request.locale == 'fr' ? 'en' : 'fr' }) }}">
+
+						{% if app.request.locale == 'fr' %}
+							<span class="fi fi-gb m-2"></span>
+
+
+						{% else %}
+							<span class="fi fi-fr m-2"></span>
+
+
+						{% endif %}
+					</a>
+
+
+				</div>
+			</nav>
+		</header>
+
+		{% block body %}{% endblock %}
+	</div>
+</body></html>

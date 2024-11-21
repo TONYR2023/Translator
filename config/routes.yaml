@@ -3,3 +3,30 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+home:
+  path: /{_locale}
+  controller: App\Controller\DefaultController::index
+  requirements:
+    _locale: 'fr|en'
+
+prestations: 
+    path: /{_locale}/prestation/
+    controller: App\Controller\DefaultController::prestations
+    defaults: { _locale: 'fr' }
+    requirements:
+        _locale: 'fr|en' 
+
+tourism:
+    path: /{_locale}/tourism/
+    controller: App\Controller\DefaultController::tourism
+    defaults: { _locale: 'fr' }
+    requirements:
+        _locale: 'fr|en' 
+
+
+switch_language:
+    path: /{_locale}/switch-language
+    controller: App\Controller\DefaultController::switchLanguage
+    requirements: { _locale: 'en|fr' }
+
